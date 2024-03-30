@@ -15,7 +15,7 @@ verses_num = data["verses_num"]
 sloks = data["sloks"]
 
 cosine_similarities = []
-question = "i am lost everything i am not able to do anything"
+question = "How to stay positive and calm?"
 
 new_question = model.encode(question)
 cosine_similarities = util.dot_score(new_question, trained_sloks)
