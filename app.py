@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 import numpy as np
 import pandas as pd
-from sentence_transformers import SentenceTransformer, util
+from sentence_transformers import util
 import json
 import pickle
 from pymongo import MongoClient
