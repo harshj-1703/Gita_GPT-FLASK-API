@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 import numpy as np
 import pandas as pd
@@ -8,7 +10,14 @@ from pymongo import MongoClient
 
 app = Flask(__name__)
 
-client = MongoClient('mongodb+srv://hj:hj@ask-krishna.ousbb2u.mongodb.net/?retryWrites=true&w=majority&appName=Ask-Krishna')
+load_dotenv()
+
+mongo_uri = os.getenv('MONGODB_URI')
+
+if not mongo_uri:
+    raise ValueError("MongoDB connection string not found in environment variables.")
+
+client = MongoClient(mongo_uri)
 db = client['Ask-Krishna']
 collection = db['Questions-Answers']
 
