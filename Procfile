@@ -1,1 +1,1 @@
-web: python app.py
+web: python model_generator.py && python app.py
