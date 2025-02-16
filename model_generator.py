@@ -42,7 +42,7 @@ for entry in all_verse_meanings:
     meaning_descriptions.append(meaning_description)
 
 # train the model
-model = SentenceTransformer('multi-qa-mpnet-base-dot-v1')
+model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
 trained_sloks = model.encode(meaning_descriptions)
 data = {"model":model,"trained_sloks":trained_sloks,"meanings":meanings,"adhyays":adhyays,"verses_num":verses,"sloks":sloks,"meaning_descriptions":meaning_descriptions}
 
