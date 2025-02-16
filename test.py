@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer,util
 import json
 import pickle
 
-with open('trained_sloks_model.pickle', 'rb') as f:
+with open('trained_sloks_model_mistralai.pickle', 'rb') as f:
     data = pickle.load(f)
     
 model = data["model"]
@@ -13,9 +13,10 @@ meanings = data["meanings"]
 adhyays = data["adhyays"]
 verses_num = data["verses_num"]
 sloks = data["sloks"]
+meaning_descriptions = data["meaning_descriptions"]
 
 cosine_similarities = []
-question = "How to stay positive and calm?"
+question = "I am tired with my life what i can do?"
 
 new_question = model.encode(question)
 cosine_similarities = util.dot_score(new_question, trained_sloks)
