@@ -22,7 +22,6 @@ for chapter_number, chapter_data in geeta_data["chapters"].items():
 with open('filtered_verse_meanings_mistralai.json', 'w', encoding='utf-8') as outfile:
     json.dump(all_verse_meanings, outfile, ensure_ascii=False, indent=4)
 
-# now store in lists
 meanings = []
 adhyays = []
 verses = []
@@ -41,7 +40,6 @@ for entry in all_verse_meanings:
     sloks.append(slok)
     meaning_descriptions.append(meaning_description)
 
-# train the model
 model = SentenceTransformer('multi-qa-MiniLM-L6-cos-v1')
 trained_sloks = model.encode(meaning_descriptions)
 data = {"model":model,"trained_sloks":trained_sloks,"meanings":meanings,"adhyays":adhyays,"verses_num":verses,"sloks":sloks,"meaning_descriptions":meaning_descriptions}
