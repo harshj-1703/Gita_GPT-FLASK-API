@@ -18,7 +18,7 @@ with open("krishna_gita_english.json", "r", encoding="utf-8") as file:
     GITA_SLOKS = json.load(file).get("verses", {})
 
 FALLBACK_RESPONSE = {
-    "meaning": "Please ask question related to bhagvadgeeta only so that can help you to improve your life.",
+    "meaning": "Please ask questions related only to the Bhagavad Gita, as they will help you improve your life.",
     "adhyay": "-",
     "verse_num": "-",
     "slok": "ॐ नमो भगवते वासुदेवाय"
